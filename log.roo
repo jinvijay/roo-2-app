@@ -1,0 +1,8 @@
+// Spring Roo 2.0.0.RELEASE [rev 4a2e9f1] log opened at 2020-09-22 23:49:29
+// Spring Roo 2.0.0.RELEASE [rev 4a2e9f1] log opened at 2020-09-22 23:49:39
+hint
+project setup --topLevelPackage com.jin.roo2
+hint
+hint
+jpa setup --provider HIBERNATE --database ORACLE 
+hint
