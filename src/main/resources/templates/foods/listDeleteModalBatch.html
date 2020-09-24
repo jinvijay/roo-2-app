@@ -1,0 +1,18 @@
+<!--TABLE-->
+<div class="table-responsive" id="containerFields" data-th-fragment="food-entityModalConfirmBody" data-th-with="collectionLink=${@linkBuilder.of('FoodsCollectionThymeleafController')},itemLink=${@linkBuilder.of('FoodsItemThymeleafController')}">
+    <table id="food-entity-table-items-to-remove-batch" data-data-load-url="${collectionLink.to('datatablesByIdsIn')}">
+      <thead>
+        <tr>
+          <th data-data="itemName" data-th-text="#{label_food_itemname}">itemName</th>
+          <th data-data="price" data-th-text="#{label_food_price}">price</th>
+        </tr>
+      </thead>
+      <tbody data-th-remove="all">
+        <tr>
+          <td>itemName</td>
+          <td>price</td>
+        </tr>
+      </tbody>
+    </table>
+</div>
+<!-- /TABLE -->

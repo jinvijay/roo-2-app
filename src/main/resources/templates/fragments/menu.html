@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Page menu</title>
+  </head>
+  <body id="body">
+    <!--
+    Only the internal content of the following div is included within
+    the template, in menu fragment
+    -->
+    <nav class="navbar navbar-default navbar-static-top" data-th-fragment="menu">
+
+         <div class="container">
+
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#mainnav" aria-expanded="false">
+                <span class="sr-only">Menu</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <!-- Brand logo -->
+              <div class="organization-logo navbar-brand">
+                <a title="roo2" href="/" data-th-href="@{/}">
+                  <img alt="roo2" data-th-src="@{/public/img/logo.png}" src="../../static/public/img/logo.png" />
+                </a>
+              </div>
+              <!-- Name application -->
+              <div class="application-name navbar-brand hidden-xs">
+                <a data-th-title="#{label_goHome}" href="/" data-th-href="@{/}">roo2</a>
+              </div>
+
+            </div><!-- /navbar-header -->
+
+            <div id="mainnav" class="navbar-collapse collapse">
+
+              <ul class="nav navbar-nav" id="entitiesMenuEntries">
+                <li class="dropdown" id="food-entry" data-z="829a2b68">
+                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" data-th-utext="#{label_menu_entry(#{label_food})}">Food<span class="caret"></span></a>
+                 <ul class="dropdown-menu">
+	                   <li><a href="/foods/create-form" data-th-href="@{/foods/create-form}" data-th-utext="#{label_create_entity(#{label_food})}">Create Food</a></li>
+	                  <li><a href="/foods" data-th-href="@{/foods}" data-th-utext="#{label_list_entity(#{label_food_plural})}">List Food</a></li>
+                 </ul>
+                </li>
+                <li class="dropdown" id="menusection-entry" data-z="9fedaa36">
+                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" data-th-utext="#{label_menu_entry(#{label_menusection})}">MenuSection<span class="caret"></span></a>
+                 <ul class="dropdown-menu">
+	                   <li><a href="/menusections/create-form" data-th-href="@{/menusections/create-form}" data-th-utext="#{label_create_entity(#{label_menusection})}">Create MenuSection</a></li>
+	                  <li><a href="/menusections" data-th-href="@{/menusections}" data-th-utext="#{label_list_entity(#{label_menusection_plural})}">List MenuSection</a></li>
+                 </ul>
+                </li>
+                <li class="dropdown" id="menusectionfood-entry" data-z="fb9d5ad6">
+                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" data-th-utext="#{label_menu_entry(#{label_menusectionfood})}">MenuSectionFood<span class="caret"></span></a>
+                 <ul class="dropdown-menu">
+	                   <li><a href="/menusectionfoods/create-form" data-th-href="@{/menusectionfoods/create-form}" data-th-utext="#{label_create_entity(#{label_menusectionfood})}">Create MenuSectionFood</a></li>
+	                  <li><a href="/menusectionfoods" data-th-href="@{/menusectionfoods}" data-th-utext="#{label_list_entity(#{label_menusectionfood_plural})}">List MenuSectionFood</a></li>
+                 </ul>
+                </li>
+              </ul>
+
+              <!-- Language select -->
+              <ul class="nav navbar-nav navbar-right upper-nav languages" data-th-replace="~{fragments/languages :: languages}">
+                <!-- Content replaced by the session template fragment language.html
+                -->
+                <span>Language data</span>
+              </ul>
+
+
+
+              <!-- User menu links -->
+              <ul class="nav navbar-nav navbar-right upper-nav links" data-th-replace="~{fragments/session-links :: links}">
+                <!-- Content replaced by the links template fragment session-links.html
+                -->
+                <span>User session data</span>
+              </ul>
+           </div>
+
+          </div>
+    </nav>
+
+    <!--
+    Only the internal content of the following div is included within
+    the template, in menu-languages fragment
+    -->
+    <nav class="navbar navbar-default navbar-static-top" data-th-fragment="menu-languages">
+
+         <div class="container">
+
+            <div class="navbar-header">
+
+              <!-- Brand logo -->
+              <div class="organization-logo navbar-brand">
+                <a title="roo2" href="/" data-th-href="@{/}">
+                  <img alt="roo2" data-th-src="@{/public/img/logo.png}" src="../../static/public/img/logo.png" />
+                </a>
+              </div>
+              <!-- Name application -->
+              <div class="application-name navbar-brand hidden-xs">
+                <a data-th-title="#{label_goHome}" href="/" data-th-href="@{/}">roo2</a>
+              </div>
+
+            </div><!-- /navbar-header -->
+
+            <div id="mainnav" class="navbar-collapse collapse">
+
+              <!-- Language select -->
+              <ul class="nav navbar-nav navbar-right upper-nav languages" data-th-replace="~{fragments/languages :: languages}">
+                <!-- Content replaced by the session template fragment language.html
+                -->
+                <span>Language data</span>
+              </ul>
+
+           </div>
+
+          </div>
+    </nav>
+
+  </body>
+</html>

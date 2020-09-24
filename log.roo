@@ -6,3 +6,29 @@ hint
 hint
 jpa setup --provider HIBERNATE --database ORACLE 
 hint
+// Spring Roo 2.0.0.RELEASE [rev 4a2e9f1] log opened at 2020-09-23 23:02:40
+entity jpa --class ~.domain.Food --table FOOD --sequenceName FOOD_SEQ --schema FOODIE_APP --identifierStrategy SEQUENCE --identifierColumn ID
+entity jpa --class ~.domain.MenuSection --table MENU_SECTION --sequenceName MENU_SECTION_SEQ --schema FOODIE_APP --identifierStrategy SEQUENCE --identifierColumn ID
+entity jpa --class ~.domain.MenuSectionFood --table MENU_SECTION_FOOD --sequenceName MENU_SECTION_FOOD_SEQ --schema FOODIE_APP --identifierStrategy SEQUENCE --identifierColumn ID
+focus --class ~.domain.Food
+field string itemName --column ITEM_NAME
+field number price --column ITEM_NAME --type java.math.BigDecimal --notNull --decimalMin 0 
+field set --fieldName menuSections --type ~.domain.MenuSectionFood --mappedBy food --joinColumnName FOOD
+focus --class ~.domain.MenuSection
+field string --fieldName sectionName --column SECTION_NM --notNull --unique 
+field set --fieldName menuSectionFood --type ~.domain.MenuSectionFood --mappedBy menuSection --joinColumnName MENU_SECTION
+// [failed] field set --fieldName menuSectionFood --type ~.domain.MenuSectionFood --mappedBy menuSection --joinColumnName SECTION_ID
+// [failed] field set --fieldName menuSectionFood --type ~.domain.MenuSectionFood --mappedBy menuSection --joinColumnName SECTION_ID --force
+// [failed] field set --fieldName menuSectionFood --type ~.domain.MenuSectionFood --mappedBy menuSection --force --joinColumnName SECTION_ID 
+// [failed] field set --fieldName menuSectionFood --type ~.domain.MenuSectionFood --force --mappedBy menuSection --joinColumnName SECTION_ID 
+hint
+repository jpa --all
+hint
+service --all
+hint
+web mvc setup 
+hint
+web mvc view setup --type THYMELEAF 
+hint
+web mvc controller --all --responseType THYMELEAF 
+// Spring Roo 2.0.0.RELEASE [rev 4a2e9f1] log opened at 2020-09-24 00:04:59
